@@ -1,0 +1,73 @@
+
+
+Option 1: Transpile TypeScript to JavaScript
+
+    Install TypeScript Compiler (if not already installed):
+    If you haven't installed TypeScript globally yet, you can do so using npm (Node Package Manager):
+
+npm install -g typescript
+
+Transpile TypeScript file:
+Use the TypeScript compiler (tsc) to transpile your TypeScript file (Transaction.ts) into JavaScript (Transaction.js):
+
+tsc Transaction.ts
+
+This command will generate a JavaScript file (Transaction.js) in the same directory.
+
+Run the JavaScript file:
+After transpiling successfully, you can run the JavaScript file (Transaction.js) using Node.js:
+
+    node Transaction.js
+
+Option 2: Use ts-node for Direct Execution (without manual transpilation)
+
+Alternatively, you can use ts-node, which allows you to directly execute TypeScript files without manually transpiling them to JavaScript:
+
+    Install ts-node (if not already installed):
+
+npm install -g ts-node
+
+Run the TypeScript file using ts-node:
+
+    ts-node Transaction.ts
+
+    This command will directly execute the TypeScript file (Transaction.ts) without requiring manual transpilation.
+
+Option 3: Integrate TypeScript into Node.js Project (recommended for larger projects)
+
+If you are working on a larger project, it’s often beneficial to set up TypeScript as part of a Node.js project. This involves setting up a tsconfig.json file to configure TypeScript compilation options and using npm scripts to manage builds and execution.
+
+Here's a basic setup:
+
+    Initialize TypeScript in your project:
+
+    css
+
+npm install --save-dev typescript
+
+Create a tsconfig.json file:
+Generate a tsconfig.json file using:
+
+csharp
+
+npx tsc --init
+
+This command creates a tsconfig.json file with default settings. You can customize this file as per your project needs.
+
+Modify package.json scripts (optional but recommended):
+Add scripts to package.json for building and running your TypeScript files:
+
+json
+
+    {
+      "scripts": {
+        "build": "tsc",
+        "start": "node dist/Transaction.js"
+      }
+    }
+
+    Run TypeScript files:
+        Use npm run build to transpile TypeScript files into JavaScript.
+        Use npm start to run the transpiled JavaScript files.
+
+By following these steps, you can integrate TypeScript seamlessly into your Node.js workflow, ensuring that you avoid SyntaxError: Unexpected identifier issues when trying to execute TypeScript files directly with Node.js.
